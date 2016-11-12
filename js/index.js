@@ -49,7 +49,7 @@
 				index++;
 				index%= 10;
 				load(index);
-			},6000);
+			},7000);
 		},1000);
 	}
 	//页面切换动画
@@ -147,7 +147,7 @@
 			circs[i].style.transitionTimingFunction = "ease-in-out";
 			circs[i].style.transitionDelay = i * 0.05 + "s";	
 			if ( i < circs.length -1 ) {
-				circs[i].style.transitionDuration = 0.8 + Math.random()*0.5 + "s";
+				circs[i].style.transitionDuration = 1.3 + Math.random()*0.5 + "s";
 				circs[i].style.left = (0.1 + Math.random()* 0.8) * 100 + "%";
 				circs[i].style.top = (0.1 + Math.random()* 0.8) * 100 + "%";
 			} else {
