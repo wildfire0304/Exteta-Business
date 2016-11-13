@@ -144,7 +144,7 @@
 	function circleBiger (index,fn) {
 		var bgColor = document.querySelector("#basicbg");
 		var cirs = bgColor.children;
-		
+
 		for (var i = 0; i < cirs.length; i++){
 			if ( i < cirs.length -1 ) {
 				cirs[i].style = "";
@@ -164,7 +164,6 @@
 		};
 		cirs[cirs.length - 1].addEventListener("transitionend",function() {
 			bgColor.style.backgroundColor = colorDate[index].basicC;
-			
 			for (var i = 0; i < cirs.length; i++) {
 				cirs[i].className = "circle_bg";
 			};

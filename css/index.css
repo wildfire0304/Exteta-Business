@@ -35,7 +35,7 @@ body {
 	width: 0px;
 	height: 0px;
 	transform: translate(-50%, -50%);
-	transition: 0s;
+	transition: 0s ease;
 }
 #basicbg .active {
 	transition: width 2.4s ease,height 2.4s ease!important;
