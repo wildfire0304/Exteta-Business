@@ -139,39 +139,38 @@
 		svgwrap_2.de = num*30;
 	}
 	// 背景圆圈动画
+	
+		
 	function circleBiger (index,fn) {
-		var  basicBg = document.querySelector("#basicbg");
-		var circs = basicBg.children;
-		for (var i = 0; i < circs.length; i++){
-			circs[i].style = "";
-			circs[i].style.transitionTimingFunction = "ease-in-out";
-			circs[i].style.transitionDelay = i * 0.05 + "s";	
-			if ( i < circs.length -1 ) {
-				circs[i].style.transitionDuration = 1.3 + Math.random()*0.5 + "s";
-				circs[i].style.left = (0.1 + Math.random()* 0.8) * 100 + "%";
-				circs[i].style.top = (0.1 + Math.random()* 0.8) * 100 + "%";
+		var bgColor = document.querySelector("#basicbg");
+		var cirs = bgColor.children;
+		
+		for (var i = 0; i < cirs.length; i++){
+			if ( i < cirs.length -1 ) {
+				cirs[i].style = "";
+				cirs[i].style.left = (0.1 + Math.random()* 0.8) * 100 + "%";
+				cirs[i].style.top = (0.1 + Math.random()* 0.8) * 100 + "%";
+				cirs[i].style.backgroundColor = colorDate[index].basicC;
 			} else {
-				circs[i].style.transitionDuration = "1.0s";
-				circs[i].style.left = "50%";
-				circs[i].style.top = "50%";
-				
+				cirs[i].style = "";
+				cirs[i].style.backgroundColor = colorDate[index].basicC;
+				cirs[i].style.left = "50%";
+				cirs[i].style.top = "50%";
 			}
 		};
-		setTimeout(function() {
-			for (var j = 0; j < circs.length; j++) {
-				circs[j].style.width = "3000px";
-				circs[j].style.height = circs[j].style.width;
-				circs[j].style.backgroundColor = colorDate[index].basicC;
-			};
-		}, 50);
-		circs[5].addEventListener("transitionend",function() {
-			fn&&fn();
-			basicBg.style.backgroundColor = colorDate[index].basicC;
-			for (var i = 0; i < circs.length; i++) {
-				circs[i].style = "";
+		document.body.style.backgroundColor = colorDate[index].basicC;
+		for (var j = 0; j < cirs.length; j++) {
+			cirs[j].className = "circle_bg active";
+		};
+		cirs[cirs.length - 1].addEventListener("transitionend",function() {
+			bgColor.style.backgroundColor = colorDate[index].basicC;
+			
+			for (var i = 0; i < cirs.length; i++) {
+				cirs[i].className = "circle_bg";
 			};
 		})
 	}
+	
 	//给导航按钮添加拖拽
 	function thumbRotate (fn) {
 		// 计算旋转角度
